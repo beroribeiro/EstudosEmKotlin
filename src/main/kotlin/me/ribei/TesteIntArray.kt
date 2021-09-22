@@ -10,6 +10,7 @@ fun main () {
     values[3] = 3
     values[4] = 2
 
+
     //ver os valores, a variavel em cada interacao/enquanto existir
     for (valor in values){
         println(valor)
@@ -22,11 +23,11 @@ fun main () {
     }
     println("---------------------------------------------")
 
+
     //inteirar sobre os indices do Array, nao esta inteirando sobre os valores propriamente ditos
     for (index in values.indices){
         println(values[index]) //passar o array em si e o indice para trazer o valor que esta na posicao especifica
     }
-
     println("---------------------------------------------")
 
 
@@ -35,5 +36,4 @@ fun main () {
     for (valor in values){
         println(valor)
     }
-
 }
