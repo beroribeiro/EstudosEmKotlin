@@ -2,8 +2,8 @@ package me.ribei
 
 //instanciando o data class
 fun main (){
-    val joao = Funcionario("Joao", 1000.0)
-    val pedro = Funcionario("Pedro", 2000.0)
+    val joao = Funcionario("Joao", 2000.0)
+    val pedro = Funcionario("Pedro", 1500.0)
     val maria = Funcionario("Maria", 4000.0)
 
     val funcionarios = listOf(joao, maria, pedro)
@@ -15,6 +15,12 @@ fun main (){
 
     //encontrar um funcionario especifico
     println(funcionarios.find { it.nome == "Maria" })
+
+    println("--------------------------------")
+    // o it eh o objeto, e o objeto tem nome e salario. Fazendo o sorted(ordenar) pelo salario:
+    funcionarios
+        .sortedBy { it.salario }
+        .forEach { println(it) } //operacoes numa collection, finalizando todas as operacoes que estao sendo atreladas a colecao
 
 }
 
