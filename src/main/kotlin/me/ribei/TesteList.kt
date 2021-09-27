@@ -2,9 +2,9 @@ package me.ribei
 
 //instanciando o data class
 fun main (){
-    val joao = Funcionario("Joao", 2000.0)
-    val pedro = Funcionario("Pedro", 1500.0)
-    val maria = Funcionario("Maria", 4000.0)
+    val joao = Funcionario("Joao", 2000.0, "CLT")
+    val pedro = Funcionario("Pedro", 1500.0, "PJ")
+    val maria = Funcionario("Maria", 4000.0, "CLT")
 
     val funcionarios = listOf(joao, maria, pedro)
 
@@ -22,12 +22,19 @@ fun main (){
         .sortedBy { it.salario }
         .forEach { println(it) } //operacoes numa collection, finalizando todas as operacoes que estao sendo atreladas a colecao
 
+    println("--------------------------------")
+    funcionarios
+        .groupBy { it.tipoContratacao } //dado a lista de funcionarios, agrupar por tipo de contratacao
+        .forEach { println(it) }
+
 }
+
 
 //comecando por aqui - criacao de um data class de funcionarios
 data class  Funcionario(
     val nome: String,
-    val salario: Double
+    val salario: Double,
+    val tipoContratacao: String
 ) {
 
     override fun toString(): String =
